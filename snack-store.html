@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CrunchCo — Snack Ringan Premium</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- GSAP Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Crunch<span>Co</span></div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#produk">Produk</a></li>
+    <li><a href="#kategori">Kategori</a></li>
+    <li><a href="#promo">Promo</a></li>
+    <li><a href="#tentang">Tentang</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="btn-cart" id="cart-btn">
+      🛒 <span class="cart-text">Keranjang</span> <span id="cart-count">0</span>
+    </button>
+    <button class="btn-menu" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- CART SIDEBAR -->
+<div class="cart-sidebar" id="cart-sidebar">
+  <div class="cart-header">
+    <h3>Keranjang Belanja</h3>
+    <button class="btn-close" id="close-cart">&times;</button>
+  </div>
+  <div class="cart-items" id="cart-items-container">
+    <!-- Items will be injected here -->
+    <div class="empty-cart-msg">Keranjang kamu masih kosong 🥨</div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Total:</span>
+      <span id="cart-total-price">Rp 0</span>
+    </div>
+    <button class="btn-checkout" onclick="showToast('🚀 Fitur Checkout segera hadir!')">Checkout Sekarang</button>
+  </div>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<!-- HERO -->
+<section class="hero" style="padding: 0;">
+  <div class="hero-content">
+    <span class="hero-tag">✦ Snack Premium Indonesia</span>
+    <h1>Snack Ringan<br><em>Rasa Berat</em></h1>
+    <p class="hero-desc">Nikmati cita rasa gurih, renyah, dan autentik dari berbagai pilihan snack ringan pilihan. Dibuat dengan bahan terbaik untuk setiap momen.</p>
+    <div class="hero-btns">
+      <a href="#produk" class="btn-primary">Belanja Sekarang</a>
+      <a href="#kategori" class="btn-outline">Lihat Kategori</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-val">50+</div>
+        <div class="hero-stat-lbl">Varian Rasa</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">12K+</div>
+        <div class="hero-stat-lbl">Pelanggan Puas</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">4.9★</div>
+        <div class="hero-stat-lbl">Rating Rata-rata</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="snack-float-group">
+      <div class="snack-card-float sf1"><span class="s-emoji">🦐</span><span class="s-name">Keripik Udang</span></div>
+      <div class="snack-card-float sf2"><span class="s-emoji">🌽</span><span class="s-name">Jagung Manis</span></div>
+      <div class="snack-card-float sf3"><span class="s-emoji">🥨</span><span class="s-name">Pretzel Gurih</span></div>
+      <div class="snack-card-float sf4"><span class="s-emoji">🧅</span><span class="s-name">Bawang Crispy</span></div>
+      <div class="snack-card-float sf5"><span class="s-emoji">🌶️</span><span class="s-name">Pedas Nendang</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span>Gratis Ongkir</span><span class="dot">✦</span>
+    <span>Renyah Tiap Gigitan</span><span class="dot">✦</span>
+    <span>Bahan Pilihan</span><span class="dot">✦</span>
+    <span>Tanpa Pengawet Berbahaya</span><span class="dot">✦</span>
+    <span>Bayar COD</span><span class="dot">✦</span>
+    <span>Promo Spesial Hari Ini</span><span class="dot">✦</span>
+    <span>Gratis Ongkir</span><span class="dot">✦</span>
+    <span>Renyah Tiap Gigitan</span><span class="dot">✦</span>
+    <span>Bahan Pilihan</span><span class="dot">✦</span>
+    <span>Tanpa Pengawet Berbahaya</span><span class="dot">✦</span>
+    <span>Bayar COD</span><span class="dot">✦</span>
+    <span>Promo Spesial Hari Ini</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="featured" id="produk">
+  <div class="featured-inner">
+    <div class="featured-header">
+      <div>
+        <div class="section-label">Produk Unggulan</div>
+        <h2 class="section-title">Favorit Pelanggan</h2>
+      </div>
+      <a href="#" class="btn-outline" style="font-size:0.88rem;padding:0.65rem 1.5rem;">Lihat Semua →</a>
+    </div>
+    <div class="products-grid">
+
+      <div class="product-card" onclick="addToCart('Keripik Udang Gurih', 18000, '🦐')">
+        <div class="product-thumb bg1">
+          🦐
+          <div class="badge-hot">🔥 Terlaris</div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Keripik Seafood</div>
+          <div class="product-name">Keripik Udang Gurih</div>
+          <div class="stars">★★★★★</div>
+          <div class="product-desc">Renyah & gurih, terbuat dari udang segar pilihan. Cocok untuk camilan santai.</div>
+          <div class="product-footer">
+            <div class="product-price"><small>Rp 25.000</small> Rp 18.000</div>
+            <button class="btn-add" onclick="event.stopPropagation();addToCart('Keripik Udang Gurih', 18000, '🦐')">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" onclick="addToCart('Jagung Bakar Pedas', 15000, '🌽')">
+        <div class="product-thumb bg2">
+          🌽
+          <div class="badge-new">✨ Baru</div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Keripik Jagung</div>
+          <div class="product-name">Jagung Bakar Pedas</div>
+          <div class="stars">★★★★☆</div>
+          <div class="product-desc">Cita rasa jagung bakar autentik dengan sentuhan pedas yang nendang.</div>
+          <div class="product-footer">
+            <div class="product-price">Rp 15.000</div>
+            <button class="btn-add" onclick="event.stopPropagation();addToCart('Jagung Bakar Pedas', 15000, '🌽')">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" onclick="addToCart('Bawang Goreng Crispy', 22000, '🧅')">
+        <div class="product-thumb bg3">🧅</div>
+        <div class="product-info">
+          <div class="product-category">Bawang Crispy</div>
+          <div class="product-name">Bawang Goreng Crispy</div>
+          <div class="stars">★★★★★</div>
+          <div class="product-desc">Super renyah, bisa dimakan langsung atau topping nasi & mie favorit kamu.</div>
+          <div class="product-footer">
+            <div class="product-price">Rp 22.000</div>
+            <button class="btn-add" onclick="event.stopPropagation();addToCart('Bawang Goreng Crispy', 22000, '🧅')">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" onclick="addToCart('Kacang Pedas BBQ', 14500, '🥜')">
+        <div class="product-thumb bg4">
+          🥜
+          <div class="badge-hot">🔥 Promo</div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Kacang-kacangan</div>
+          <div class="product-name">Kacang Pedas BBQ</div>
+          <div class="stars">★★★★★</div>
+          <div class="product-desc">Perpaduan sempurna antara pedas, manis, dan aroma BBQ yang menggoda selera.</div>
+          <div class="product-footer">
+            <div class="product-price"><small>Rp 20.000</small> Rp 14.500</div>
+            <button class="btn-add" onclick="event.stopPropagation();addToCart('Kacang Pedas BBQ', 14500, '🥜')">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" onclick="addToCart('Kerupuk Palembang', 28000, '🍘')">
+        <div class="product-thumb bg5">🍘</div>
+        <div class="product-info">
+          <div class="product-category">Kerupuk Tradisional</div>
+          <div class="product-name">Kerupuk Palembang</div>
+          <div class="stars">★★★★★</div>
+          <div class="product-desc">Kerupuk khas Palembang, tipis, ringan, dan mekar sempurna saat digoreng.</div>
+          <div class="product-footer">
+            <div class="product-price">Rp 28.000</div>
+            <button class="btn-add" onclick="event.stopPropagation();addToCart('Kerupuk Palembang', 28000, '🍘')">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" onclick="addToCart('Makaroni Pedas Level 5', 12000, '🌶️')">
+        <div class="product-thumb bg6">
+          🌶️
+          <div class="badge-new">🆕 Baru</div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Makaroni Pedas</div>
+          <div class="product-name">Makaroni Pedas Level 5</div>
+          <div class="stars">★★★★☆</div>
+          <div class="product-desc">Tantang lidahmu dengan makaroni level pedas tertinggi! Berani coba?</div>
+          <div class="product-footer">
+            <div class="product-price">Rp 12.000</div>
+            <button class="btn-add" onclick="event.stopPropagation();addToCart('Makaroni Pedas Level 5', 12000, '🌶️')">+</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories" id="kategori">
+  <div class="categories-inner">
+    <div class="cats-header">
+      <div class="section-label">Jelajahi</div>
+      <h2 class="section-title">Semua Kategori</h2>
+    </div>
+    <div class="cats-grid">
+      <div class="cat-card c1"><span class="cat-emoji">🦐</span><div class="cat-name">Seafood</div><div class="cat-count">14 produk</div></div>
+      <div class="cat-card c2"><span class="cat-emoji">🌽</span><div class="cat-name">Jagung</div><div class="cat-count">8 produk</div></div>
+      <div class="cat-card c3"><span class="cat-emoji">🌶️</span><div class="cat-name">Pedas</div><div class="cat-count">11 produk</div></div>
+      <div class="cat-card c4"><span class="cat-emoji">🥜</span><div class="cat-name">Kacang</div><div class="cat-count">7 produk</div></div>
+      <div class="cat-card c5"><span class="cat-emoji">🍘</span><div class="cat-name">Tradisional</div><div class="cat-count">9 produk</div></div>
+      <div class="cat-card c6"><span class="cat-emoji">🧁</span><div class="cat-name">Manis</div><div class="cat-count">6 produk</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BANNER PROMO -->
+<div class="banner" id="promo">
+  <div>
+    <div class="section-label" style="color:var(--golden);">Penawaran Terbatas</div>
+    <h2>Hemat <em>30%</em> untuk<br>Paket Bundle Favorit</h2>
+    <p>Gabungkan snack terfavorit dalam satu paket hemat. Gratis ongkir ke seluruh Indonesia untuk pembelian di atas Rp 100.000.</p>
+    <a href="#produk" class="btn-primary" style="margin-top:2rem;display:inline-block;">Ambil Promo Sekarang</a>
+  </div>
+  <div class="banner-right">
+    <span class="banner-emoji-big">🎁</span>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <div class="reviews-inner">
+    <div class="reviews-header">
+      <div class="section-label">Testimonial</div>
+      <h2 class="section-title">Kata Mereka</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Keripik udangnya enak banget! Renyah dan gurih, ga bikin eneg. Udah pesan ulang sampai 5 kali dan ga pernah kecewa."</p>
+        <div class="review-author">
+          <div class="review-avatar">SA</div>
+          <div><div class="review-name">Siti Aisyah</div><div class="review-loc">Surabaya, Jawa Timur</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Packaging rapi, snack sampai masih fresh dan renyah. Makaroni level 5 beneran pedas tapi bikin nagih terus!"</p>
+        <div class="review-author">
+          <div class="review-avatar">BR</div>
+          <div><div class="review-name">Budi Raharjo</div><div class="review-loc">Bandung, Jawa Barat</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Kacang BBQ-nya juara! Beli buat oleh-oleh keluarga, eh semua pada minta lagi. Harga juga terjangkau banget."</p>
+        <div class="review-author">
+          <div class="review-avatar">DW</div>
+          <div><div class="review-name">Dewi Wulandari</div><div class="review-loc">Malang, Jawa Timur</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="section-label">Stay Updated</div>
+  <h2>Daftar & Dapat Voucher 15%</h2>
+  <p>Masukkan email kamu dan dapatkan info promo eksklusif pertama kali.</p>
+  <div class="newsletter-form">
+    <input type="email" placeholder="email@kamu.com" />
+    <button class="btn-primary" onclick="showToast('🎉 Terima kasih! Voucher dikirim ke email kamu.')">Daftar Sekarang</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="nav-logo">Crunch<span style="color:var(--golden)">Co</span></span>
+      <p>Snack ringan berkualitas premium untuk setiap momen — dari santai di rumah sampai acara spesial bersama orang tercinta.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Produk</h4>
+      <ul>
+        <li><a href="#">Keripik Seafood</a></li>
+        <li><a href="#">Kacang-kacangan</a></li>
+        <li><a href="#">Kerupuk Tradisional</a></li>
+        <li><a href="#">Makaroni Pedas</a></li>
+        <li><a href="#">Paket Bundle</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Layanan</h4>
+      <ul>
+        <li><a href="#">Cara Pesan</a></li>
+        <li><a href="#">Lacak Pesanan</a></li>
+        <li><a href="#">Kebijakan Retur</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Hubungi Kami</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Ikuti Kami</h4>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">TikTok</a></li>
+        <li><a href="#">WhatsApp</a></li>
+        <li><a href="#">Tokopedia</a></li>
+        <li><a href="#">Shopee</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 CrunchCo. Hak cipta dilindungi.</p>
+    <p>Dibuat dengan 🧡 di Indonesia</p>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

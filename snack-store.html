@@ -117,11 +117,11 @@
         <div class="section-label">Produk Unggulan</div>
         <h2 class="section-title">Favorit Pelanggan</h2>
       </div>
-      <a href="#" class="btn-outline" style="font-size:0.88rem;padding:0.65rem 1.5rem;">Lihat Semua →</a>
+      <a href="#produk" id="view-all-products" class="btn-outline" style="font-size:0.88rem;padding:0.65rem 1.5rem;">Lihat Semua →</a>
     </div>
-    <div class="products-grid">
+    <div class="products-grid" id="products-grid">
 
-      <div class="product-card" onclick="addToCart('Keripik Udang Gurih', 18000, '🦐')">
+      <div class="product-card" data-category="seafood" onclick="addToCart('Keripik Udang Gurih', 18000, '🦐')">
         <div class="product-thumb bg1">
           🦐
           <div class="badge-hot">🔥 Terlaris</div>
@@ -138,7 +138,7 @@
         </div>
       </div>
 
-      <div class="product-card" onclick="addToCart('Jagung Bakar Pedas', 15000, '🌽')">
+      <div class="product-card" data-category="jagung" onclick="addToCart('Jagung Bakar Pedas', 15000, '🌽')">
         <div class="product-thumb bg2">
           🌽
           <div class="badge-new">✨ Baru</div>
@@ -155,7 +155,7 @@
         </div>
       </div>
 
-      <div class="product-card" onclick="addToCart('Bawang Goreng Crispy', 22000, '🧅')">
+      <div class="product-card" data-category="tradisional" onclick="addToCart('Bawang Goreng Crispy', 22000, '🧅')">
         <div class="product-thumb bg3">🧅</div>
         <div class="product-info">
           <div class="product-category">Bawang Crispy</div>
@@ -169,7 +169,7 @@
         </div>
       </div>
 
-      <div class="product-card" onclick="addToCart('Kacang Pedas BBQ', 14500, '🥜')">
+      <div class="product-card" data-category="kacang" onclick="addToCart('Kacang Pedas BBQ', 14500, '🥜')">
         <div class="product-thumb bg4">
           🥜
           <div class="badge-hot">🔥 Promo</div>
@@ -186,13 +186,13 @@
         </div>
       </div>
 
-      <div class="product-card" onclick="addToCart('Kerupuk Palembang', 28000, '🍘')">
+      <div class="product-card" data-category="tradisional" onclick="addToCart('Kerupuk Palembang', 28000, '🍘')">
         <div class="product-thumb bg5">🍘</div>
         <div class="product-info">
           <div class="product-category">Kerupuk Tradisional</div>
           <div class="product-name">Kerupuk Palembang</div>
           <div class="stars">★★★★★</div>
-          <div class="product-desc">Kerupuk khas Palembang, tipis, ringan, dan mekar sempurna saat digoreng.</div>
+          <div class="product-desc">Kerupuk khas Palembang, tipis, ringan, and mekar sempurna saat digoreng.</div>
           <div class="product-footer">
             <div class="product-price">Rp 28.000</div>
             <button class="btn-add" onclick="event.stopPropagation();addToCart('Kerupuk Palembang', 28000, '🍘')">+</button>
@@ -200,7 +200,7 @@
         </div>
       </div>
 
-      <div class="product-card" onclick="addToCart('Makaroni Pedas Level 5', 12000, '🌶️')">
+      <div class="product-card" data-category="pedas" onclick="addToCart('Makaroni Pedas Level 5', 12000, '🌶️')">
         <div class="product-thumb bg6">
           🌶️
           <div class="badge-new">🆕 Baru</div>
@@ -229,12 +229,12 @@
       <h2 class="section-title">Semua Kategori</h2>
     </div>
     <div class="cats-grid">
-      <div class="cat-card c1"><span class="cat-emoji">🦐</span><div class="cat-name">Seafood</div><div class="cat-count">14 produk</div></div>
-      <div class="cat-card c2"><span class="cat-emoji">🌽</span><div class="cat-name">Jagung</div><div class="cat-count">8 produk</div></div>
-      <div class="cat-card c3"><span class="cat-emoji">🌶️</span><div class="cat-name">Pedas</div><div class="cat-count">11 produk</div></div>
-      <div class="cat-card c4"><span class="cat-emoji">🥜</span><div class="cat-name">Kacang</div><div class="cat-count">7 produk</div></div>
-      <div class="cat-card c5"><span class="cat-emoji">🍘</span><div class="cat-name">Tradisional</div><div class="cat-count">9 produk</div></div>
-      <div class="cat-card c6"><span class="cat-emoji">🧁</span><div class="cat-name">Manis</div><div class="cat-count">6 produk</div></div>
+      <div class="cat-card c1" data-category="seafood"><span class="cat-emoji">🦐</span><div class="cat-name">Seafood</div><div class="cat-count">14 produk</div></div>
+      <div class="cat-card c2" data-category="jagung"><span class="cat-emoji">🌽</span><div class="cat-name">Jagung</div><div class="cat-count">8 produk</div></div>
+      <div class="cat-card c3" data-category="pedas"><span class="cat-emoji">🌶️</span><div class="cat-name">Pedas</div><div class="cat-count">11 produk</div></div>
+      <div class="cat-card c4" data-category="kacang"><span class="cat-emoji">🥜</span><div class="cat-name">Kacang</div><div class="cat-count">7 produk</div></div>
+      <div class="cat-card c5" data-category="tradisional"><span class="cat-emoji">🍘</span><div class="cat-name">Tradisional</div><div class="cat-count">9 produk</div></div>
+      <div class="cat-card c6" data-category="manis"><span class="cat-emoji">🧁</span><div class="cat-name">Manis</div><div class="cat-count">6 produk</div></div>
     </div>
   </div>
 </section>
@@ -294,10 +294,42 @@
   <h2>Daftar & Dapat Voucher 15%</h2>
   <p>Masukkan email kamu dan dapatkan info promo eksklusif pertama kali.</p>
   <div class="newsletter-form">
-    <input type="email" placeholder="email@kamu.com" />
-    <button class="btn-primary" onclick="showToast('🎉 Terima kasih! Voucher dikirim ke email kamu.')">Daftar Sekarang</button>
+    <form id="newsletter-form">
+      <input type="email" id="newsletter-email" placeholder="email@kamu.com" required />
+      <button type="submit" class="btn-primary">Daftar Sekarang</button>
+    </form>
   </div>
 </section>
+
+<!-- CHECKOUT MODAL -->
+<div class="modal" id="checkout-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Konfirmasi Pesanan</h3>
+      <button class="btn-close-modal" id="close-checkout">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div id="checkout-summary">
+        <!-- Summary will be injected here -->
+      </div>
+      <form id="checkout-form" class="checkout-form">
+        <div class="form-group">
+          <label for="cust-name">Nama Lengkap</label>
+          <input type="text" id="cust-name" required placeholder="Masukkan nama kamu" />
+        </div>
+        <div class="form-group">
+          <label for="cust-address">Alamat Pengiriman</label>
+          <textarea id="cust-address" required placeholder="Alamat lengkap pengiriman"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="cust-phone">Nomor WhatsApp</label>
+          <input type="tel" id="cust-phone" required placeholder="Contoh: 08123456789" />
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%; margin-top: 1rem;">Pesan Sekarang via WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -345,6 +377,11 @@
 
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="back-to-top" aria-label="Kembali ke atas">
+  ↑
+</button>
 
 <script src="js/script.js"></script>
 </body>
